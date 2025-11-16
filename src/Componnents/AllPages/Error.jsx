@@ -24,7 +24,7 @@ const Error = () => {
                     </div>
                     <div>
                       <a><button onClick={navigateBack} className='btn font-semibold text-[16px] px-[20px] bg-[#0AB991] text-white mr-[10px]'>Go Back</button></a>
-                        <a  href='/' className='btn font-semibold text-[16px] border-2 border-yellow-500 text-black hover:bg-yellow-500 hover:text-white px-[20px]'>Go Home</a>
+                        <a  href='/' className='btn font-semibold text-[16px] border-2 border-[#0AB991]  light:text-black hover:bg-[#0AB991] hover:text-white px-[20px]'>Go Home</a>
                     </div>
                 </div>
 

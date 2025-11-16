@@ -2,6 +2,8 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthContext';
 import Container from '../Container/Container';
 import { Link } from 'react-router';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const MyServices = () => {
     const { user } = use(AuthContext);
@@ -17,6 +19,35 @@ const MyServices = () => {
                 .catch(err => console.log(err));
         }
     }, [user?.email]);
+
+
+const handleDelete = (id) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "This action cannot be undone!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Yes, delete it!",
+    cancelButtonText: "Cancel"
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+      axios.delete(`http://localhost:3000/all-services/${id}`)
+        .then((res) => {
+          console.log("Deleted successfully:", res.data);
+          setData((prev) => prev.filter((item) => item._id !== id));
+        })
+        .catch((err) => {
+          console.error("Error deleting booking:", err);
+        });
+
+      Swal.fire("Deleted!", "Your item has been deleted.", "success");
+    }
+  });
+};
+
 
     return (
         <div className='md:my-30 my-15'>
@@ -79,11 +110,15 @@ const MyServices = () => {
                                     <td>${item.Price}</td>
 
                                     
-                                    <th>
+                                    <th className='space-x-2'>
                                         <Link to={`/my-services-update/${item._id}`} className="btn btn-ghost btn-xs bg-[#0ab991] text-white outline-none">
                                             Edit
                                         </Link>
+                                         <button onClick={() => handleDelete(item._id)}  className="btn btn-ghost btn-xs bg-red-500 text-white">
+                    Delete
+                  </button>
                                     </th>
+
                                 </tr>
                             ))}
                         </tbody>

@@ -1,11 +1,16 @@
 import React from 'react';
 import Navbar from './Componnents/Header/Navbar';
-import { Outlet } from 'react-router';
+import { Outlet} from 'react-router';
 import Footer from './Componnents/Footer/Footer';
 import { Toaster } from 'react-hot-toast';
 
 
 const Root = () => {
+
+
+ 
+
+
     return (
         <div>
         <Navbar></Navbar>

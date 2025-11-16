@@ -13,6 +13,9 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  console.log(location);
+  
+
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center items-center">
@@ -46,7 +49,7 @@ const Login = () => {
             .then((result) => {
                 setUser(result.user);
                 toast.success('Logged In Successfully')
-                navigate('/')
+                navigate(location?.state || '/');
             })
             .catch((error) => {
                 toast.error(error.message)
