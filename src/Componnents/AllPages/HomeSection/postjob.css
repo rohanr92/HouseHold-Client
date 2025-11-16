@@ -1,0 +1,22 @@
+.marquee-vertical {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-auto-rows: 100px;            
+  gap: 15px;
+  animation: verticalMarquee 60s linear infinite;
+}
+
+@keyframes verticalMarquee {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } 
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}

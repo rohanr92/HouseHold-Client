@@ -1,0 +1,103 @@
+import React, { use, useEffect, useState } from 'react';
+import { AuthContext } from '../Provider/AuthContext';
+import Container from '../Container/Container';
+import { Link } from 'react-router';
+
+const MyServices = () => {
+    const { user } = use(AuthContext);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        if (user?.email) {
+            fetch(`http://localhost:3000/my-services?email=${user.email}`)
+                .then(response => response.json())
+                .then(json => {
+                    setData(json);
+                })
+                .catch(err => console.log(err));
+        }
+    }, [user?.email]);
+
+    return (
+        <div className='md:my-30 my-15'>
+            <Container>
+                <div className='mb-15 text-center'>
+
+                    <h2 className='text-[36px] font-bold'>My Services</h2>
+
+                </div>
+                
+
+                {
+                    data.length == 0 ? <h2 className='text-center'>You Do not have any services.</h2> : <>
+                    
+                    
+                    <div className="overflow-x-auto">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Services</th>
+                                <th>Provider</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {data.map((item, index) => (
+                                <tr key={item._id}>
+                                    
+                                    <th>{index + 1}</th>
+
+                                    
+                                    <td>
+                                        <div className="flex items-center gap-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle h-12 w-12">
+                                                    <img
+                                                        src={item.ImageURL}
+                                                        alt={item.ServiceName}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div className="font-bold">
+                                                    {item.ServiceName}
+                                                </div>
+                                                <div className="text-sm opacity-50">
+                                                    {item.ServiceArea}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    
+                                    <td>{item.ProviderName}</td>
+
+                                    
+                                    <td>${item.Price}</td>
+
+                                    
+                                    <th>
+                                        <Link to={`/my-services-update/${item._id}`} className="btn btn-ghost btn-xs bg-[#0ab991] text-white outline-none">
+                                            Edit
+                                        </Link>
+                                    </th>
+                                </tr>
+                            ))}
+                        </tbody>
+
+                    </table>
+                </div>
+                    
+                    
+                    
+                    </>
+                }
+            </Container>
+        </div>
+    );
+};
+
+export default MyServices;
