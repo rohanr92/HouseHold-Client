@@ -14,6 +14,7 @@ import PrivateRoute from '../Componnents/PrivateRoute/PrivateRoute';
 import MyServices from '../Componnents/AllPages/MyServices';
 import ServiceUpdate from '../Componnents/AllPages/ServiceUpdate';
 import MyBookings from '../Componnents/AllPages/MYBookings';
+import Error from '../Componnents/AllPages/Error';
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,8 @@ const router = createBrowserRouter([
       {
         path: '/my-bookings',
         element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>,
-      }
+      },
+      { path: '*', Component: Error },
     ],
   },
   {
