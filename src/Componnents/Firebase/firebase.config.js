@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDzFUnPmNytZ7hkSI5TQyCscqN7ibc0Zv0",
-  authDomain: "household-project-3ef35.firebaseapp.com",
-  projectId: "household-project-3ef35",
-  storageBucket: "household-project-3ef35.firebasestorage.app",
-  messagingSenderId: "129745452985",
-  appId: "1:129745452985:web:04dae5cf8127854a188068"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId, 
 };
 
 
