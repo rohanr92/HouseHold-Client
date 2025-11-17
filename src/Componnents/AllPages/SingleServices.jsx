@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import Container from '../Container/Container';
 import { FaArrowLeft, FaStar } from 'react-icons/fa';
@@ -10,6 +10,18 @@ const SingleServices = () => {
   const product = useLoaderData();
   const { user } = use(AuthContext);
 
+  const [reviews, setReviews] = useState([]);
+  const [reviewMessage, setReviewMessage] = useState("");
+  const [reviewRating, setReviewRating] = useState(5);
+
+  useEffect(() => {
+    if (product?._id) {
+      fetch(`http://localhost:3000/reviews/${product._id}`)
+        .then(res => res.json())
+        .then(data => setReviews(data));
+    }
+  }, [product?._id]);
+
   if (!product) {
     return (
       <Container>
@@ -17,7 +29,6 @@ const SingleServices = () => {
       </Container>
     );
   }
-
 
   const {
     Availability,
@@ -41,7 +52,6 @@ const SingleServices = () => {
   const modalHandle = () => {
     document.getElementById('booking_modal').showModal();
   };
-
 
   const bookHandleButton = async (e) => {
     e.preventDefault();
@@ -75,7 +85,7 @@ const SingleServices = () => {
         });
         document.getElementById('booking_modal').close();
       } else {
-                Swal.fire({
+        Swal.fire({
           title: "Failed",
           text: "Booking Failed",
           icon: "error"
@@ -84,13 +94,15 @@ const SingleServices = () => {
 
     } catch (error) {
       console.error("Error saving booking:", error);
-     Swal.fire({
-          title: "Failed",
-          text: "Booking Failed",
-          icon: "error"
-        });
+      Swal.fire({
+        title: "Failed",
+        text: "Booking Failed",
+        icon: "error"
+      });
     }
   };
+
+  
 
   return (
     <div>
@@ -172,6 +184,7 @@ const SingleServices = () => {
                 <div className="text-sm text-gray-700 space-y-1">
                   <p><span className="font-semibold dark:text-black">Product ID:</span> {_id}</p>
                   <p><span className="font-semibold dark:text-black">Posted:</span> 10/19/2024</p>
+                  <p><span className="font-semibold dark:text-black">Reviews:</span> {ReviewCount}</p>
                 </div>
               </div>
 
@@ -215,7 +228,7 @@ const SingleServices = () => {
               <dialog id="booking_modal" className="modal">
                 <div className="modal-box">
 
-                  {/* Close Button */}
+                 
                   <form method="dialog">
                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                       ✕
@@ -314,7 +327,34 @@ const SingleServices = () => {
           </div>
         </div>
 
+        
+        <div className="max-w-4xl mx-auto mt-14 mb-20">
 
+          <h2 className="text-3xl font-bold mb-6">Customer Reviews</h2>
+
+         
+          {reviews.length === 0 && (
+            <p className="text-gray-600 text-center">No reviews yet. Be the first to review!</p>
+          )}
+
+          {reviews.map((r) => (
+            <div key={r._id} className="border-1 border-gray-300 rounded-xl p-4 mb-4 shadow-sm bg-white">
+              <div className="flex items-center justify-between">
+                <h3 className="font-semibold dark:text-[#0ab991]">{r.userName}</h3>
+                <p className="flex items-center gap-1 text-yellow-600">
+                  <FaStar /> {r.rating}
+                </p>
+              </div>
+              <p className="text-gray-700 mt-2">{r.message}</p>
+            </div>
+          ))}
+
+         
+
+
+          
+        </div>
+        
 
       </Container>
 
