@@ -1,4 +1,5 @@
 ul a.active {
     text-decoration: underline;
     text-decoration-color: #0ab991;
+    color: #0ab991;
 }

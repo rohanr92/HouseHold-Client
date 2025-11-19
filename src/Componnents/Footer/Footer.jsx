@@ -15,10 +15,10 @@ Your one-stop platform for all household services. Find trusted professionals fo
   </aside>
   <nav>
     <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <a className="link link-hover">Employees</a>
+    <a className="link link-hover">Search</a>
+    <a className="link link-hover">News</a>
+    <a className="link link-hover">Career</a>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
@@ -33,8 +33,13 @@ Your one-stop platform for all household services. Find trusted professionals fo
     <a className="link link-hover">Privacy policy</a>
     <a className="link link-hover">Cookie policy</a>
   </nav>
+
 </footer>
+
 </Container>
+<div className='w-full light:bg-[#b8b8b8] dark:bg-[#0d0f11] h-[40px] text-center place-items-center flex justify-center'>
+  <h4>Copyright © 2025, HouseHold Corp. All Rights Reserved.</h4>
+</div>
         </div>
     );
 };
