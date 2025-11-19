@@ -3,6 +3,7 @@ import { Navigate, useNavigate, useParams } from 'react-router';
 import Container from '../Container/Container';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import PageTitle from '../PageTitle';
 
 const ServiceUpdate = () => {
     const { id } = useParams();
@@ -92,6 +93,7 @@ const formData = {
     
     return (
         <div>
+          <PageTitle title="Update Service - Household App" />
             <Container>
   <div className="w-full min-h-screen py-12 flex flex-col items-center">
     <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">

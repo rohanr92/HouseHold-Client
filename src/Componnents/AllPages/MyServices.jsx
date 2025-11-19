@@ -4,6 +4,7 @@ import Container from '../Container/Container';
 import { Link } from 'react-router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import PageTitle from '../PageTitle';
 
 const MyServices = () => {
     const { user } = use(AuthContext);
@@ -51,6 +52,7 @@ const handleDelete = (id) => {
 
     return (
         <div className='md:my-30 my-15'>
+            <PageTitle title="My Services - Household App" />
             <Container>
                 <div className='mb-15 text-center'>
 

@@ -3,6 +3,7 @@ import { FaUser } from 'react-icons/fa';
 import Container from '../../Container/Container';
 import { AuthContext } from '../../Provider/AuthContext';
 import toast from 'react-hot-toast';
+import PageTitle from '../../PageTitle';
 
 const Forgot = () => {
     const [message, setMessage] = useState('');
@@ -31,6 +32,7 @@ const Forgot = () => {
 
     return (
       <div className='light:bg-gray-100 min-h-screen px-[13px]'>
+        <PageTitle title="Forgot Password - Household App" />
        <Container>
 
             <div  className="flex items-center justify-center min-h-screen">

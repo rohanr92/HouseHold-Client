@@ -6,6 +6,7 @@ import { AuthContext } from '../Provider/AuthContext';
 import toast from 'react-hot-toast';
 import { FiSun, FiMoon } from "react-icons/fi";
 import "./Navbar.css"
+import { RxAvatar } from 'react-icons/rx';
 
 
 const Navbar = () => {

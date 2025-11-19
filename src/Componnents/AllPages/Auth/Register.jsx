@@ -6,6 +6,7 @@ import { AuthContext } from '../../Provider/AuthContext';
 
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import PageTitle from '../../PageTitle';
 
 const RegisterPage = () => {
 
@@ -97,6 +98,7 @@ const googleSignUp = () => {
     return (
         <div className="flex items-center justify-center min-h-screen light:bg-gray-100 py-[80px] px-[15px]">
             <Container>
+                <PageTitle title="Register - Household App" />
                 <div className='place-items-center'>
                     <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
 

@@ -5,6 +5,7 @@ import Container from '../Container/Container';
 import { HiSearch, HiFilter } from 'react-icons/hi';
 import { FaMapMarkerAlt, FaStar } from 'react-icons/fa';
 import axios from 'axios';
+import PageTitle from '../PageTitle';
 
 const AllServices = () => {
   const { loading } = useContext(AuthContext);
@@ -50,6 +51,7 @@ const AllServices = () => {
 
   return (
     <Container>
+      <PageTitle title="All Services - Household App" />
       <div className="min-h-screen py-12 font-sans">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">

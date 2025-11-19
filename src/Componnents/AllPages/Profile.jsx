@@ -15,6 +15,7 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Bar, Doughnut } from 'react-chartjs-2';
+import PageTitle from '../PageTitle';
 
 ChartJS.register(
   CategoryScale,
@@ -163,6 +164,7 @@ const Profile = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen pb-20">
+      <PageTitle title="Profile - Household App" />
       <Container>
         <div className="flex flex-col lg:flex-row gap-8 pt-12">
         

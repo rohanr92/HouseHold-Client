@@ -5,6 +5,7 @@ import { FaArrowLeft, FaStar } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import PageTitle from '../PageTitle';
 
 const SingleServices = () => {
   const product = useLoaderData();
@@ -106,6 +107,7 @@ const SingleServices = () => {
 
   return (
     <div>
+      <PageTitle title={`${ServiceName} - Household App`} />
       <Container>
         <div className="py-10 px-4 md:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">

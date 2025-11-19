@@ -7,12 +7,15 @@ import Talented from '../Talented';
 import HighestService from './HighestService';
 import TestimonialHome from '../TestimonialHome';
 import Faqs from '../Faqs';
+import PageTitle from '../../../PageTitle';
 
 const Home = () => {
 
     
     return (
+        
         <div>
+            <PageTitle title="Home - Household App" />
             <Banner></Banner>
             <Marquees></Marquees>
             <PostJob></PostJob>

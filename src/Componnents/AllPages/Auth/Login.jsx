@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import Container from '../../Container/Container';
 import { AuthContext } from '../../Provider/AuthContext';
 import toast from 'react-hot-toast';
+import PageTitle from '../../PageTitle';
 
 const Login = () => {
   const { user, setUser, login, loading, googleLogin } = use(AuthContext);
@@ -58,6 +59,7 @@ const Login = () => {
 
   return (
     <div className='light:bg-gray-100 px-[15px]'>
+      <PageTitle title="Login - Household App" />
       <Container>
         <div className="flex items-center justify-center min-h-screen">
           <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">

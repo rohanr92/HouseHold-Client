@@ -3,6 +3,7 @@ import Container from "../Container/Container";
 import { Link } from "react-router";
 import axios from "axios";
 import { AuthContext } from "../Provider/AuthContext";
+import PageTitle from "../PageTitle";
 
 
 
@@ -59,6 +60,7 @@ const formData = {
 
   return (
   <Container>
+    <PageTitle title="Create Services - Household App" />
   <div className="w-full min-h-screen  py-12 flex flex-col items-center">
     <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
       Create <span className="text-[#0AB991]">A Service</span>
