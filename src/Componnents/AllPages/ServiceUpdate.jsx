@@ -108,7 +108,7 @@ const formData = {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label  className="font-medium">Category</label>
+        <label  className="font-medium dark:text-black">Category</label>
         <input type="text" defaultValue={Category} name="Category" className="input input-bordered w-full" />
       </div>
 
