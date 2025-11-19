@@ -103,7 +103,7 @@ const formData = {
     <form onSubmit={formUpdate} className="w-full max-w-4xl shadow-xl border border-gray-200 rounded-2xl bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Service Name</label>
+        <label className="font-medium dark:text-black">Service Name</label>
         <input type="text" defaultValue={ServiceName} placeholder="e.g. Home Cleaning Service" name="ServiceName" className="input input-bordered w-full" />
       </div>
 
