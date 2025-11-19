@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../../Container/Container';
-import { FaStar, FaEye, FaDollarSign, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaStar, FaEye, FaDollarSign, FaMapMarkerAlt, FaLongArrowAltRight } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import { fadeIn } from '../../../variants';
 import axios from 'axios';
@@ -110,6 +110,10 @@ const HomeCollection = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className='text-center'>
+          <Link to='/all-services' className='btn btn-primary bg-[#0ab991] border-0 outline-0 shadow-none text-white'>View All Services  <FaLongArrowAltRight /></Link>
+         
         </div>
       </Container>
     </div>

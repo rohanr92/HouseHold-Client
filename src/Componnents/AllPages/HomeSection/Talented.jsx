@@ -27,13 +27,13 @@ const Talented = () => {
 
                             <div className="mt-4 flex gap-4 sm:mt-6">
                                 <Link
-                                    to="/get-started"
+                                    to="/all-services"
                                     className="inline-block rounded border border-[#0ab991] bg-[#0ab991] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#3cc7ac] hover:border-[#3cc7ac]"
                                 >
                                     Get Started
                                 </Link>
                                 <Link
-                                    to="/learn-more"
+                                    to="/all-services"
                                     className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-[#0ab991] shadow-sm transition-colors hover:bg-[#0ab991] hover:text-white"
                                 >
                                     Learn More

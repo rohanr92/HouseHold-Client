@@ -165,7 +165,7 @@ const HighestService = () => {
                   </div>
 
                   
-                  <Link className="flex items-center justify-center gap-2 w-full mt-auto py-2.5 px-4 border border-gray-300 rounded-full dark:text-black hover:bg-[#0ab991] hover:border-[#0ab991] transition text-sm font-semibold cursor-pointer hover:text-white">
+                  <Link to='/all-services' className="flex items-center justify-center gap-2 w-full mt-auto py-2.5 px-4 border border-gray-300 rounded-full dark:text-black hover:bg-[#0ab991] hover:border-[#0ab991] transition text-sm font-semibold cursor-pointer hover:text-white">
                     View Profile
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>

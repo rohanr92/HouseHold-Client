@@ -51,7 +51,7 @@ const PostJob = () => {
               <div>Receive quotes and pick the best Tasker</div>
             </div>
 
-            <Link className="inline-block rounded border border-[#0ab991] bg-[#0ab991] px-5 py-3 font-medium text-white mt-[14px] shadow-sm transition-colors hover:bg-[#3cc7ac] hover:border-[#3cc7ac]">
+            <Link to='/add-services' className="inline-block rounded border border-[#0ab991] bg-[#0ab991] px-5 py-3 font-medium text-white mt-[14px] shadow-sm transition-colors hover:bg-[#3cc7ac] hover:border-[#3cc7ac]">
               Get Started
             </Link>
           </motion.div>

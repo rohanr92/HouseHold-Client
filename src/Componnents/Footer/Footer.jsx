@@ -37,7 +37,7 @@ Your one-stop platform for all household services. Find trusted professionals fo
 </footer>
 
 </Container>
-<div className='w-full light:bg-[#b8b8b8] dark:bg-[#0d0f11] h-[40px] text-center place-items-center flex justify-center'>
+<div className='w-full bg-[#b8b8b8] h-[40px] text-center place-items-center flex justify-center'>
   <h4>Copyright © 2025, HouseHold Corp. All Rights Reserved.</h4>
 </div>
         </div>

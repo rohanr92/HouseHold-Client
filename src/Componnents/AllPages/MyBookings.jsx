@@ -4,6 +4,7 @@ import Container from '../Container/Container';
 import axios from 'axios';
 // import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import PageTitle from '../PageTitle';
 
 const MyBookings = () => {
 
@@ -93,6 +94,7 @@ const MyBookings = () => {
 
   return (
     <div className='md:my-30 my-15'>
+       <PageTitle title="My Bookings - Household App" />
       <Container>
 
         <div className="mb-15 text-center">

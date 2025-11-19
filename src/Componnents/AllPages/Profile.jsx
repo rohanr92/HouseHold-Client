@@ -163,7 +163,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen pb-20">
+    <div className="light:bg-gray-100 min-h-screen pb-20">
       <PageTitle title="Profile - Household App" />
       <Container>
         <div className="flex flex-col lg:flex-row gap-8 pt-12">
@@ -184,7 +184,7 @@ const Profile = () => {
             </div>
 
             <div className="mb-6 text-center">
-              <h2 className="text-2xl font-bold">{user.displayName}</h2>
+              <h2 className="text-2xl text-black font-bold">{user.displayName}</h2>
               <p className="text-gray-600">{user.email}</p>
               <p className="text-gray-500">Last Login: {user?.metadata?.lastSignInTime}</p>
             </div>
