@@ -12,7 +12,7 @@ const MyServices = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/my-services?email=${user.email}`)
+            fetch(`https://household-server-gray.vercel.app/my-services?email=${user.email}`)
                 .then(response => response.json())
                 .then(json => {
                     setData(json);
@@ -35,7 +35,7 @@ const handleDelete = (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
 
-      axios.delete(`http://localhost:3000/all-services/${id}`)
+      axios.delete(`https://household-server-gray.vercel.app/all-services/${id}`)
         .then((res) => {
           console.log("Deleted successfully:", res.data);
           setData((prev) => prev.filter((item) => item._id !== id));

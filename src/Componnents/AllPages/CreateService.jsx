@@ -64,7 +64,7 @@ const handleSubmitForm = (e) => {
     Description: description,
   };
 
-  axios.post("http://localhost:3000/all-services", formData)
+  axios.post("https://household-server-gray.vercel.app/all-services", formData)
     .then((res) => {
       console.log("SERVER RESPONSE:", res.data);
       if (res.data.insertedId) {

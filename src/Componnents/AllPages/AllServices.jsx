@@ -28,7 +28,7 @@ const AllServices = () => {
         if (minPrice) params.minPrice = minPrice;
         if (maxPrice) params.maxPrice = maxPrice;
 
-        const res = await axios.get('http://localhost:3000/all-services/filter', { params });
+        const res = await axios.get('https://household-server-gray.vercel.app/all-services/filter', { params });
         setServices(res.data);
 
         const allCategories = ['All', ...new Set(res.data.map(s => s.Category))];

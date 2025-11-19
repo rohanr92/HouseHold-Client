@@ -44,7 +44,7 @@ const Profile = () => {
 
       try {
       
-        const servicesRes = await axios.get(`http://localhost:3000/my-services?email=${user.email}`);
+        const servicesRes = await axios.get(`https://household-server-gray.vercel.app/my-services?email=${user.email}`);
         const services = servicesRes.data || [];
         const servicesCount = services.length;
 
@@ -55,7 +55,7 @@ const Profile = () => {
         let ratedServices = 0;
 
         for (const service of services) {
-          const bookingsRes = await axios.get(`http://localhost:3000/bookings?serviceId=${service._id}`);
+          const bookingsRes = await axios.get(`https://household-server-gray.vercel.app/bookings?serviceId=${service._id}`);
           const bookings = bookingsRes.data || [];
           totalBookings += bookings.length;
           totalRevenue += bookings.reduce((acc, b) => acc + (b.price || 0), 0);

@@ -23,12 +23,12 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: '/all-services', 
-        loader: () => fetch('http://localhost:3000/all-services'),
+        loader: () => fetch('https://household-server-gray.vercel.app/all-services'),
         Component: AllServices, 
       },
       {
         path: 'all-services/:id',
-        loader: ({params}) => fetch(`http://localhost:3000/all-services/${params.id}`),
+        loader: ({params}) => fetch(`https://household-server-gray.vercel.app/all-services/${params.id}`),
         element: <PrivateRoute><SingleServices></SingleServices></PrivateRoute>
 
       },

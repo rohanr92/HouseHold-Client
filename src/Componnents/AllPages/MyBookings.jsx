@@ -16,7 +16,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/user-bookings?email=${user.email}`)
+      fetch(`https://household-server-gray.vercel.app/user-bookings?email=${user.email}`)
         .then(response => response.json())
         .then(json => {
           setData(json);
@@ -38,7 +38,7 @@ const MyBookings = () => {
     if (!selectedServiceId) return;
 
     try {
-      await axios.post(`http://localhost:3000/reviews`, {
+      await axios.post(`https://household-server-gray.vercel.app/reviews`, {
         serviceId: selectedServiceId,
         userEmail: user.email,
         userName: user.displayName || "Hong Pong Kong",
@@ -76,7 +76,7 @@ const MyBookings = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axios.delete(`http://localhost:3000/bookings/${id}`)
+        axios.delete(`https://household-server-gray.vercel.app/bookings/${id}`)
           .then((res) => {
             console.log("Deleted successfully:", res.data);
             setData((prev) => prev.filter((item) => item._id !== id));

@@ -16,7 +16,7 @@ const HomeCollection = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/all-services');
+        const response = await axios.get('https://household-server-gray.vercel.app/all-services');
         const sortedServices = response.data
           .sort((a, b) => (b.ReviewCount || 0) - (a.ReviewCount || 0))
           .slice(0, 6);

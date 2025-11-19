@@ -18,7 +18,7 @@ const ServiceUpdate = () => {
    
 
   useEffect(() => {
-    fetch(`http://localhost:3000/all-services/${id}`)
+    fetch(`https://household-server-gray.vercel.app/all-services/${id}`)
       .then(res => res.json())
       .then(data => setService(data));
   }, [id]);
@@ -75,7 +75,7 @@ const formData = {
 };
 
 
-    axios.patch(`http://localhost:3000/all-services/${id}`, formData)
+    axios.patch(`https://household-server-gray.vercel.app/all-services/${id}`, formData)
     .then((res) => {
       console.log("SERVER RESPONSE:", res.data);
       toast.success('Updated Your Service');

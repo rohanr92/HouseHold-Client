@@ -60,7 +60,7 @@ const RegisterPage = () => {
           photoURL: imageUrl || result.user.photoURL || ''
         };
 
-        return axios.post('http://localhost:3000/users', usersData)
+        return axios.post('https://household-server-gray.vercel.app/users', usersData)
           .then(() => updatedProfile(name, imageUrl));
     })
     .then(() => {
@@ -87,7 +87,7 @@ const googleSignUp = () => {
           photoURL: result.user.photoURL || ''
         };
 
-        return axios.post('http://localhost:3000/users', usersData)
+        return axios.post('https://household-server-gray.vercel.app/users', usersData)
           .then(() => navigate('/'));
     })
     .catch((error) => {

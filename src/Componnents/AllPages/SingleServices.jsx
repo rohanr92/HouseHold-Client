@@ -17,7 +17,7 @@ const SingleServices = () => {
 
   useEffect(() => {
     if (product?._id) {
-      fetch(`http://localhost:3000/reviews/${product._id}`)
+      fetch(`https://household-server-gray.vercel.app/reviews/${product._id}`)
         .then(res => res.json())
         .then(data => setReviews(data));
     }
@@ -73,7 +73,7 @@ const SingleServices = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/bookings",
+        "https://household-server-gray.vercel.app/bookings",
         bookingData
       );
 
