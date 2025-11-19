@@ -123,47 +123,47 @@ const formData = {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Service Price ($)</label>
+        <label className="font-medium dark:text-black">Service Price ($)</label>
         <input defaultValue={Price} name="Price" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Pricing Type</label>
+        <label className="font-medium dark:text-black">Pricing Type</label>
  <input defaultValue={PricingType} name="PricingType" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2 md:col-span-2">
-        <label className="font-medium">Service Image URL</label>
+        <label className="font-medium dark:text-black">Service Image URL</label>
         <input defaultValue={ImageURL} name="ImageURL" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Provider Name</label>
+        <label className="font-medium dark:text-black">Provider Name</label>
         <input defaultValue={ProviderName} name="ProviderName" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Provider Email</label>
+        <label className="font-medium dark:text-black">Provider Email</label>
         <input value={ProviderEmail} name="ProviderEmail" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Provider Phone Number</label>
+        <label className="font-medium dark:text-black">Provider Phone Number</label>
         <input defaultValue={ProviderPhoneNumber} name="ProviderPhoneNumber" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Rating (Optional)</label>
+        <label className="font-medium dark:text-black">Rating (Optional)</label>
         <input defaultValue={Rating} name="Rating" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Review Count (Optional)</label>
+        <label className="font-medium dark:text-black">Review Count (Optional)</label>
         <input defaultValue={ReviewCount} name="ReviewCount" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2 md:col-span-2">
-        <label className="font-medium">Description</label>
+        <label className="font-medium dark:text-black">Description</label>
         <textarea defaultValue={Description} name="Description" className="textarea textarea-bordered h-32"></textarea>
       </div>
 
