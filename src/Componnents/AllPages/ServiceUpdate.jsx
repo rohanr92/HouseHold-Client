@@ -113,12 +113,12 @@ const formData = {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Availability</label>
+        <label className="font-medium dark:text-black">Availability</label>
         <input defaultValue={Availability} name="Availability" className="input input-bordered w-full" />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Service Area</label>
+        <label className="font-medium dark:text-black">Service Area</label>
         <input defaultValue={ServiceArea} name="ServiceArea" className="input input-bordered w-full" />
       </div>
 
