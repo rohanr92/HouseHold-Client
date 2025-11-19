@@ -173,7 +173,6 @@ const MyBookings = () => {
 
                           </div>
                         </dialog>
-
                         <button onClick={() => handleDelete(item._id)} className="btn btn-ghost btn-xs bg-red-500 text-white">
                           Delete
                         </button>
