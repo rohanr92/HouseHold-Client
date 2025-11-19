@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import axios from "axios";
 import { AuthContext } from "../Provider/AuthContext";
 import PageTitle from "../PageTitle";
+import Swal from "sweetalert2";
 
 
 
@@ -14,49 +15,69 @@ export default function CreateService() {
   
 
 const handleSubmitForm = (e) => {
-    e.preventDefault();
-   const serviceName = e.target.ServiceName.value;
-const category = e.target.Category.value;
-const availability = e.target.Availability.value;
-const serviceArea = e.target.ServiceArea.value;
-const price = e.target.Price.value;
-const pricingType = e.target.PricingType.value;
-const imageURL = e.target.ImageURL.value;
-const providerName = e.target.ProviderName.value;
-const providerEmail = e.target.ProviderEmail.value;
-const providerPhoneNumber = e.target.ProviderPhoneNumber.value;
-const rating = e.target.Rating.value;
-const reviewCount = e.target.ReviewCount.value;
-const description = e.target.Description.value;
+  e.preventDefault();
 
+  const serviceName = e.target.ServiceName.value.trim();
+  const category = e.target.Category.value.trim();
+  const availability = e.target.Availability.value.trim();
+  const serviceArea = e.target.ServiceArea.value.trim();
+  const price = e.target.Price.value.trim();
+  const pricingType = e.target.PricingType.value.trim();
+  const imageURL = e.target.ImageURL.value.trim();
+  const providerName = e.target.ProviderName.value.trim();
+  const providerEmail = e.target.ProviderEmail.value.trim();
+  const providerPhoneNumber = e.target.ProviderPhoneNumber.value.trim();
+  const rating = e.target.Rating.value.trim();
+  const reviewCount = e.target.ReviewCount.value.trim();
+  const description = e.target.Description.value.trim();
 
+ 
+  if (
+    !serviceName ||
+    !category ||
+    !availability ||
+    !serviceArea ||
+    !price ||
+    !pricingType ||
+    !imageURL ||
+    !providerName ||
+    !providerEmail ||
+    !providerPhoneNumber
+  ) {
+    Swal.fire("Error", "Please fill in all required fields", "error");
+    return;
+  }
 
-const formData = {
-  ServiceName: serviceName,
-  Category: category,
-  Availability: availability,
-  ServiceArea: serviceArea,
-  Price: price,
-  PricingType: pricingType,
-  ImageURL: imageURL,
-  ProviderName: providerName,
-  ProviderEmail: providerEmail,
-  ProviderPhoneNumber: providerPhoneNumber,
-  Rating: rating,
-  ReviewCount: reviewCount,
-  Description: description,
-};
+  const formData = {
+    ServiceName: serviceName,
+    Category: category,
+    Availability: availability,
+    ServiceArea: serviceArea,
+    Price: price,
+    PricingType: pricingType,
+    ImageURL: imageURL,
+    ProviderName: providerName,
+    ProviderEmail: providerEmail,
+    ProviderPhoneNumber: providerPhoneNumber,
+    Rating: rating,
+    ReviewCount: reviewCount,
+    Description: description,
+  };
 
-    axios.post("http://localhost:3000/all-services", formData)
+  axios.post("http://localhost:3000/all-services", formData)
     .then((res) => {
       console.log("SERVER RESPONSE:", res.data);
+      if (res.data.insertedId) {
+        Swal.fire("Success", "Service Added", "success").then(() => {
+          e.target.reset(); 
+        });
+      }
     })
     .catch((error) => {
       console.log("POST ERROR:", error);
+      Swal.fire("Error", "Something went wrong", "error");
     });
-
-    e.targe.reset();
-}
+};
 
   return (
   <Container>

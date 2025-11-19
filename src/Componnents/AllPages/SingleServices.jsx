@@ -305,7 +305,7 @@ const SingleServices = () => {
                         type="number"
                         readOnly
                         value={Price}
-                        className="input input-bordered w-full  bg-gray-100"
+                        className="input input-bordered w-full text-black  bg-gray-100"
                         name='price'
                       />
                     </div>
