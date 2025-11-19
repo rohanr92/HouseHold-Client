@@ -1,10 +1,11 @@
 
 import { use, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import logo from '../../../src/assets/logo-cl.svg'
 import { AuthContext } from '../Provider/AuthContext';
 import toast from 'react-hot-toast';
 import { FiSun, FiMoon } from "react-icons/fi";
+import "./Navbar.css"
 
 
 const Navbar = () => {
@@ -43,15 +44,15 @@ const handleTheme = (checked) => {
    
     const navigations = (
         <>
-            <Link to='/' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black block md:flex'>Home</Link>
-            <Link to='/all-services' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>Services</Link>
+            <NavLink to='/' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black block md:flex'>Home</NavLink>
+            <NavLink to='/all-services' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>Services</NavLink>
 
             {user &&<>
             
-            <Link to='/my-services' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>My Services</Link>
-            <Link to='/add-services' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>Add Services</Link>
-            <Link to='my-bookings' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>My Bookings</Link>
-            <Link to='profile' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>Profile</Link>
+            <NavLink to='/my-services' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>My Services</NavLink>
+            <NavLink to='/add-services' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>Add Services</NavLink>
+            <NavLink to='my-bookings' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>My Bookings</NavLink>
+            <NavLink to='profile' className='hover:text-[#0ab991] text-[16px] sm:text-[16px] text-black sm:block block md:flex'>Profile</NavLink>
             
             </>}
 
@@ -109,11 +110,34 @@ const handleTheme = (checked) => {
   <>
 <button onClick={() => handleTheme(theme !== "dark")}>
   {theme === "dark" ? (
-    <FiSun className="text-2xl text-yellow-400 cursor-pointer" />
+    <FiSun className="text-2xl text-[#0ab991] cursor-pointer" />
   ) : (
     <FiMoon className="text-2xl text-gray-700 cursor-pointer" />
   )}
 </button>
+<li>
+
+  {user ? (
+  <div className="relative group mr-[7px]">
+    {user.photoURL ? (
+      <img
+        src={user.photoURL}
+        alt="Profile"
+        className="w-12 h-12 rounded-full border-2 border-[#0ab991] object-cover"
+      />
+    ) : (
+      <div className="w-12 h-12 sm:flex items-center justify-center rounded-full border-2 border-yellow-500 bg-gray-200 hidden">
+        <RxAvatar className="text-gray-400 w-8 h-8" />
+      </div>
+    )}
+
+   
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm bg-black text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      {user.displayName || "User"}
+    </span>
+  </div>
+) : null}
+</li>
 
     <li>
       <Link
