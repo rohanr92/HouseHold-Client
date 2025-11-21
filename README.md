@@ -1,6 +1,6 @@
 HouseHold App
 
-Live Site URL:
+Live Site URL: https://household-client.netlify.app/
 
 Key Features:
 1. Find the Best Service Providers

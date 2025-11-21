@@ -6,15 +6,15 @@ import { motion } from "framer-motion";
 import { fadeIn } from '../../../variants';
 
 const tasks = [
-  { title: 'Handyperson', desc: 'Help with home maintenance', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
-  { title: 'Cleaner', desc: 'House cleaning services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
+  { title: 'Handyperson', desc: 'home maintenance', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
+  { title: 'Cleaner', desc: 'Cleaning services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
   { title: 'Gardener', desc: 'Lawn & garden care', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
   { title: 'Electrician', desc: 'Electrical repairs', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
-  { title: 'Plumber', desc: 'Fix leaks & pipes', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
-  { title: 'Painter', desc: 'Home painting services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
-  { title: 'Mover', desc: 'Help with moving', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
+  { title: 'Plumber', desc: 'Leaks & pipes', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
+  { title: 'Painter', desc: 'Pinting services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
+  { title: 'Mover', desc: 'Help moving', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
   { title: 'Tutor', desc: 'Teaching services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
-  { title: 'Driver', desc: 'Personal driving services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
+  { title: 'Driver', desc: 'Driving services', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
   { title: 'Chef', desc: 'Personal chef', img: 'https://images.airtasker.com/v7/www.airtasker.com/static/assets/5a21d886cdab7130.png?w=73&h=73&q=80' },
 ];
 
